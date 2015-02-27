@@ -11,8 +11,8 @@ Package.onUse(function(api) {
 
   api.use([
     'jquery',
-    'dburles:google-maps'
-  ], 'client');
+    'dburles:google-maps@1.0.8'
+  ]);
 
   api.addFiles([
     'lib/jquery.geocomplete.js'
