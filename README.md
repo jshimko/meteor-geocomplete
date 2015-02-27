@@ -4,7 +4,7 @@
 
 This is a wrapper around the [Geocomplete](https://github.com/ubilabs/geocomplete) jQuery plugin with updated docs for Meteor usage.
 
-Geocomplete is a plugin that wraps the Google Maps API's [Geocoding](https://code.google.com/apis/maps/documentation/javascript/geocoding.html) and [Places Autocomplete](https://code.google.com/apis/maps/documentation/javascript/places.html#places_autocomplete) services. You simply provide an input and it lets you search for locations with a nice autocomplete dropdown.  The results that are returned are geographically biased to the user's location (rough user location is [determined by their IP](https://developers.google.com/places/documentation/autocomplete#location_biasing)).  Optionally, you can add a container to show an interactive map and/or a form that will be populated with the address details.
+Geocomplete is a plugin that wraps the Google Maps API's [Geocoding](https://code.google.com/apis/maps/documentation/javascript/geocoding.html) and [Places Autocomplete](https://developers.google.com/maps/documentation/javascript/places) services. You simply provide an input and it lets you search for locations with a nice autocomplete dropdown.  The results that are returned are geographically biased to the user's location (rough user location is [determined by their IP](https://developers.google.com/places/documentation/autocomplete#location_biasing)).  Optionally, you can add a container to show an interactive map and/or a form that will be populated with the address details.
 
 ## Usage
 
