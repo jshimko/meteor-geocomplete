@@ -4,6 +4,8 @@
 
 This is a wrapper around the [Geocomplete](https://github.com/ubilabs/geocomplete) jQuery plugin with updated docs for Meteor usage.
 
+Demo: http://geocomplete.meteor.com ([source](https://github.com/jshimko/meteor-geocomplete-example))
+
 Geocomplete is a plugin that wraps the Google Maps API's [Geocoding](https://code.google.com/apis/maps/documentation/javascript/geocoding.html) and [Places Autocomplete](https://developers.google.com/maps/documentation/javascript/places) services. You simply provide an input and it lets you search for locations with a nice autocomplete dropdown.  The results that are returned are geographically biased to the user's location (rough user location is [determined by their IP](https://developers.google.com/places/documentation/autocomplete#location_biasing)).  Optionally, you can add a container to show an interactive map and/or a form that will be populated with the address details.
 
 ## Usage
@@ -35,12 +37,15 @@ Router.onBeforeAction(function() {
 }, { only: ['someRoute', 'anotherRoute'] });
 ```
 
-To convert an input field into an autocompleting location search field, simply call the Geocomplete plugin in one of the following ways when your template is rendered:
+To convert an input field into an autocompleting location search field, simply reactively call the Geocomplete plugin when your template is rendered and the Google Maps API is loaded:
 
 ```javascript
 Template.myTemplate.rendered = function() {
-  $("input").geocomplete();  // Option 1: Call on an element.
-  $.fn.geocomplete("input"); // Option 2: Pass an element as an argument.
+  Tracker.autorun(function () {
+    if (GoogleMaps.loaded()) {
+      $("input").geocomplete();
+    }
+  });
 }
 ```
 
@@ -64,7 +69,11 @@ To trigger a geocoding request from outside the field (eg. when clicking the "fi
 
 ```javascript
 Template.myTemplate.rendered = function() {
-  $("input").geocomplete(); 
+  Tracker.autorun(function () {
+    if (GoogleMaps.loaded()) {
+      $("input").geocomplete();
+    }
+  });
 }
 
 Template.myTemplate.events({
