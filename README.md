@@ -171,7 +171,7 @@ $("#my_input").geocomplete({
 * `markerOptions.disabled` - Do not show marker. Default: `false`. Set to true to disable marker.
 * `maxZoom` - The maximum zoom level to zoom in after a geocoding response. Default: `16`
 * `componentRestrictions` - Option for Google Places Autocomplete to restrict results by country. See the [docs](https://developers.google.com/maps/documentation/javascript/places#places_autocomplete)
-* `types` - An array containing one or more of the supported types for the places request. Default: `['geocode']` See the full list [here](http://code.google.com/apis/maps/documentation/javascript/places.html#place_search_requests).
+* `types` - An array containing one or more of the supported types for the places request. Default: `['geocode']` See the full list [here](https://developers.google.com/places/documentation/supported_types). Note that an autocomplete field only supports the types in [Table 3](https://developers.google.com/places/documentation/supported_types#table3).
 * `blur` - Defaults to `false`. When enabled it will trigger the geocoding request whenever the geofield is blured. (See jQuery `.blur()`)
 
 ## Events
