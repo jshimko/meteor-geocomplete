@@ -15,14 +15,13 @@ This package depends on `dburles:google-maps` to access the Google Maps API (it 
 Call the `GoogleMaps.load()` method and pass in a settings object that contains your API key and any [optional libraries](https://developers.google.com/maps/documentation/javascript/libraries) you want to load. (Geocomplete requires the Places library)
 
 ```javascript
-if (Meteor.isClient) {
-  Meteor.startup(function() {
-    GoogleMaps.load({
-      key: 'YOUR API KEY',
-      libraries: 'places'  // also accepts an array if you need more than one
-    });
+// client
+Meteor.startup(function() {
+  GoogleMaps.load({
+    key: 'YOUR API KEY',
+    libraries: 'places'  // also accepts an array if you need more than one
   });
-}
+});
 ```
 
 You could also choose to only load the API on specific routes with [Iron Router](https://atmospherejs.com/iron/router).
@@ -40,13 +39,13 @@ Router.onBeforeAction(function() {
 To convert an input field into an autocompleting location search field, simply reactively call the Geocomplete plugin when your template is rendered and the Google Maps API is loaded:
 
 ```javascript
-Template.myTemplate.rendered = function() {
-  Tracker.autorun(function () {
+Template.myTemplate.onRendered(function() {
+  this.autorun(function () {
     if (GoogleMaps.loaded()) {
       $("input").geocomplete();
     }
   });
-}
+});
 ```
 
 ## Examples
@@ -68,13 +67,13 @@ Note:  Per [Google policy](https://developers.google.com/maps/documentation/java
 To trigger a geocoding request from outside the field (eg. when clicking the "find" button), simply trigger the "geocode" event on the element.
 
 ```javascript
-Template.myTemplate.rendered = function() {
-  Tracker.autorun(function () {
+Template.myTemplate.onRendered(function() {
+  this.autorun(function () {
     if (GoogleMaps.loaded()) {
       $("input").geocomplete();
     }
   });
-}
+});
 
 Template.myTemplate.events({
   'click button': function() {
