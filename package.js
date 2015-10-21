@@ -1,7 +1,7 @@
 Package.describe({
   name: 'jeremy:geocomplete',
   summary: 'Geocoding and Google Places Autocomplete Plugin',
-  version: '1.6.5_7',
+  version: '1.6.5_8',
   git: 'https://github.com/jshimko/meteor-geocomplete.git'
 });
 
@@ -11,7 +11,7 @@ Package.onUse(function(api) {
 
   api.use([
     'jquery',
-    'dburles:google-maps@1.1.1'
+    'dburles:google-maps@1.1.5'
   ]);
 
   api.imply('dburles:google-maps');
