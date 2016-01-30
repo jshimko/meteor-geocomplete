@@ -12,7 +12,7 @@ Geocomplete is a plugin that wraps the Google Maps API's [Geocoding](https://cod
 ## Install
 
 ```
-meteor install jeremy:geocomplete
+meteor add jeremy:geocomplete
 ```
 This package depends on `dburles:google-maps` to access the Google Maps API (it will be installed automatically).
 
