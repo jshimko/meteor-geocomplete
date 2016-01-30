@@ -7,10 +7,15 @@ This is a wrapper around the [Geocomplete](https://github.com/ubilabs/geocomplet
 Demo: http://geocomplete.meteor.com ([source](https://github.com/jshimko/meteor-geocomplete-example))
 
 Geocomplete is a plugin that wraps the Google Maps API's [Geocoding](https://code.google.com/apis/maps/documentation/javascript/geocoding.html) and [Places Autocomplete](https://developers.google.com/maps/documentation/javascript/places) services. You simply provide an input and it lets you search for locations with a nice autocomplete dropdown.  The results that are returned are geographically biased to the user's location (rough user location is [determined by their IP](https://developers.google.com/places/documentation/autocomplete#location_biasing)).  Optionally, you can add a container to show an interactive map and/or a form that will be populated with the address details.
-
-## Usage
-
+## Install
+```
+meteor add jeremy:geocomplete
+```
 This package depends on `dburles:google-maps` to access the Google Maps API (it will be installed automatically).
+  
+ 
+## Usage
+ 
 
 Call the `GoogleMaps.load()` method and pass in a settings object that contains your API key and any [optional libraries](https://developers.google.com/maps/documentation/javascript/libraries) you want to load. (Geocomplete requires the Places library)
 
