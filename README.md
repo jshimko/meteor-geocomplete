@@ -2,6 +2,8 @@
 
 ### Google Places Autocomplete and Geocoding Plugin
 
+**Version 1.7.0**
+
 This is a wrapper around the [Geocomplete](https://github.com/ubilabs/geocomplete) jQuery plugin with updated docs for Meteor usage.
 
 Demo: http://geocomplete.meteor.com ([source](https://github.com/jshimko/meteor-geocomplete-example))
@@ -66,6 +68,9 @@ Basic uses:
 * [Attribute](http://ubilabs.github.com/geocomplete/examples/custom_attribute.html) - Using custom attributes to populate data.
 * [Multiple results](http://ubilabs.github.com/geocomplete/examples/multiple_results.html) - Handling multiple results from the geocoder.
 * [Draggable](http://ubilabs.github.com/geocomplete/examples/draggable.html) -  A draggable marker to redefine the position.
+* [Styled](http://ubilabs.github.com/geocomplete/examples/styled.html) -  A styled map example.
+
+## Requirements
 
 Note:  Per [Google policy](https://developers.google.com/maps/documentation/javascript/places#autocomplete_no_map), if you use the plugin without showing a map you must display the "powered by Google" logo under the text field.  This is already taken care of for you in this plugin.  No extra steps needed.
 
@@ -180,7 +185,7 @@ $("#my_input").geocomplete({
 * `markerOptions.disabled` - Do not show marker. Default: `false`. Set to true to disable marker.
 * `maxZoom` - The maximum zoom level to zoom in after a geocoding response. Default: `16`
 * `componentRestrictions` - Option for Google Places Autocomplete to restrict results by country. See the [docs](https://developers.google.com/maps/documentation/javascript/places#places_autocomplete)
-* `types` - An array containing one or more of the supported types for the places request. Default: `['geocode']` See the full list [here](https://developers.google.com/places/documentation/supported_types). Note that an autocomplete field only supports the types in [Table 3](https://developers.google.com/places/documentation/supported_types#table3).
+* `types` - An array containing one or more of the supported types for the places request. Default: `['geocode']` See the full list [here](https://developers.google.com/places/supported_types). Note that an autocomplete field only supports the types in [Table 3](https://developers.google.com/places/supported_types#table3).
 * `blur` - Defaults to `false`. When enabled it will trigger the geocoding request whenever the geofield is blured. (See jQuery `.blur()`)
 
 ## Events
@@ -202,6 +207,8 @@ The following events are supported:
 * `"geocode:multiple"` - Fired immediately after the "result" event if multiple results were found. Passes an array of all results.
 * `"geocode:dragged"` - Fired when the marker's position was modified manually. Passes the updated location.
 * `"geocode:click"` - Fired when 'click' event occurs on the map. Passes the location where the click had place.
+* `"geocode:mapdragged"` - Fired when the map bounds are modified by dragging manually. Passes the location of the current map center.
+* `"geocode:idle"` - Fired when the map becomes idle after panning or zooming. Passes the location of the current map center.
 
 ## Methods and Properties
 
