@@ -1,7 +1,7 @@
 Package.describe({
   name: 'jeremy:geocomplete',
   summary: 'Geocoding and Google Places Autocomplete Plugin',
-  version: '1.7.0',
+  version: '1.8.0',
   git: 'https://github.com/jshimko/meteor-geocomplete.git'
 });
 
